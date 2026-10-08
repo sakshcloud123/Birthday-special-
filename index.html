@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Bubu 💕</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(135deg, #ffd6e5, #fff0f5, #ffe1ec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 620px;
+    padding: 45px 25px;
+    text-align: center;
+    background: rgba(255,255,255,0.88);
+    border-radius: 35px;
+    box-shadow: 0 15px 45px rgba(150,50,80,0.18);
+    animation: entrance 1.3s ease;
+    position: relative;
+    z-index: 5;
+}
+
+.small {
+    font-size: 20px;
+    color: #b65b78;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: clamp(42px, 10vw, 68px);
+    color: #d94f78;
+    margin: 15px 0;
+    animation: heartbeat 2s infinite;
+}
+
+h2 {
+    font-size: clamp(25px, 6vw, 36px);
+    color: #b83d66;
+    margin: 10px 0 25px;
+}
+
+p {
+    font-size: clamp(19px, 4.5vw, 24px);
+    line-height: 1.7;
+    color: #5f4b52;
+}
+
+button {
+    margin-top: 20px;
+    padding: 17px 34px;
+    border: none;
+    border-radius: 50px;
+    background: #df5a82;
+    color: white;
+    font-size: 19px;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(223,90,130,0.3);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+.floating {
+    position: absolute;
+    bottom: -60px;
+    font-size: 30px;
+    animation: floatUp 7s linear infinite;
+    opacity: 0;
+}
+
+.f1 { left: 8%; animation-delay: 0s; }
+.f2 { left: 22%; animation-delay: 2s; }
+.f3 { left: 42%; animation-delay: 4s; }
+.f4 { left: 65%; animation-delay: 1s; }
+.f5 { left: 82%; animation-delay: 3s; }
+
+@keyframes entrance {
+    from {
+        opacity: 0;
+        transform: scale(0.7) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        bottom: -60px;
+        opacity: 0;
+        transform: translateX(0) rotate(0deg);
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: translateX(80px) rotate(360deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="floating f1">💕</div>
+<div class="floating f2">💗</div>
+<div class="floating f3">💖</div>
+<div class="floating f4">💕</div>
+<div class="floating f5">💗</div>
+
+<div class="container">
+
+    <div class="small">A tiny surprise made with lots of love...</div>
+
+    <h1>Hey Chinmay 💕</h1>
+
+    <h2>My Baby. My Bubu. My Love. 🥹</h2>
+
+    <p>
+        Before you go any further...
+        <br>
+        I just want you to know something.
+    </p>
+
+    <p>
+        You are <b>very, very special</b> to me.
+        <br>
+        And I made this little world
+        <br>
+        especially for you. ✨
+    </p>
+
+    <button onclick="goNext()">
+        Come here, Bubu 💗
+    </button>
+
+</div>
+
+<script>
+function goNext() {
+    window.location.href = "page2.html";
+}
+</script>
+
+</body>
+</html>
