@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubu Let's Play 💗</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffd1dc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 92%;
+    max-width: 500px;
+    text-align: center;
+    background: rgba(255,255,255,0.95);
+    padding: 25px 18px;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+}
+
+h1 {
+    color: #ff3f6c;
+}
+
+.subtitle {
+    color: #555;
+    line-height: 1.5;
+}
+
+.score {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff3f6c;
+    margin: 15px;
+}
+
+.game-area {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(#fff0f5, #ffe1ea);
+    border: 3px solid #ff8fab;
+    border-radius: 22px;
+    overflow: hidden;
+    touch-action: manipulation;
+}
+
+.falling-heart {
+    position: absolute;
+    top: -50px;
+    font-size: 38px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    animation: fall linear forwards;
+    touch-action: manipulation;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-60px);
+    }
+
+    to {
+        transform: translateY(460px);
+    }
+}
+
+.catch-message {
+    min-height: 30px;
+    margin-top: 12px;
+    color: #ff3f6c;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.success {
+    margin-top: 15px;
+    padding: 18px;
+    background: #fff0f5;
+    border-radius: 20px;
+    color: #ff3f6c;
+    line-height: 1.6;
+}
+
+.next-btn {
+    margin-top: 15px;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 30px;
+    background: #ff3f6c;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎮 Bubu, Let's Play!</h1>
+
+<p class="subtitle">
+Okay Chinmay baby... 😌<br>
+I have a tiny challenge for you.
+
+<br><br>
+
+Catch <b>10 hearts</b> for me. 💗
+</p>
+
+<div class="score">
+Hearts caught: <span id="score">0</span> / 10
+</div>
+
+<div class="game-area" id="gameArea"></div>
+
+<div class="catch-message" id="catchMessage">
+Catch them, my love! 👀💗
+</div>
+
+<div id="successBox" class="success hidden">
+
+🥹 You did it, Bubu!
+
+<br><br>
+
+You caught all my hearts...
+
+<br>
+
+although honestly,
+<b>you already had them. 😌💗</b>
+
+<br><br>
+
+Good job, baby.
+I'm proud of you. 🥹
+
+<br><br>
+
+Now there's one more little surprise waiting for you...
+
+<br>
+
+<button class="next-btn" onclick="goNext()">
+Take me to the next one 😏
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+let score = 0;
+
+const gameArea = document.getElementById("gameArea");
+const scoreText = document.getElementById("score");
+const message = document.getElementById("catchMessage");
+const successBox = document.getElementById("successBox");
+
+const cuteMessages = [
+"That's one for your smile. 😌",
+"Good job, baby! 💗",
+"Aww Bubu caught one! 🥹",
+"That heart was definitely meant for you.",
+"My love is getting better at this. 😏",
+"One more heart for my favourite person.",
+"Chinmayyyy! You're actually good at this 😂",
+"That's my bubu! 💕",
+"Okay handsome, keep going!",
+"Almost there, baby! 👀"
+];
+
+function createHeart() {
+
+if (score >= 10) return;
+
+const heart = document.createElement("button");
+
+heart.className = "falling-heart";
+heart.innerHTML = "💗";
+
+const randomLeft =
+Math.random() * (gameArea.clientWidth - 50);
+
+const randomDuration =
+2.5 + Math.random() * 2;
+
+heart.style.left = randomLeft + "px";
+heart.style.animationDuration = randomDuration + "s";
+
+let caught = false;
+
+heart.addEventListener("pointerdown", function(event) {
+
+event.preventDefault();
+
+if (caught) return;
+
+caught = true;
+
+score++;
+
+scoreText.textContent = score;
+
+message.textContent =
+cuteMessages[(score - 1) % cuteMessages.length];
+
+heart.remove();
+
+if (score >= 10) {
+finishGame();
+}
+
+});
+
+gameArea.appendChild(heart);
+
+setTimeout(() => {
+
+if (!caught && heart.parentElement) {
+heart.remove();
+}
+
+}, randomDuration * 1000 + 300);
+
+}
+
+function finishGame() {
+
+message.textContent =
+"You caught all my hearts... just like you caught mine. 🥹";
+
+successBox.classList.remove("hidden");
+
+gameArea.style.opacity = "0.45";
+
+}
+
+let gameInterval = setInterval(createHeart, 700);
+
+function goNext() {
+
+clearInterval(gameInterval);
+
+window.location.href = "page5.html";
+
+}
+
+</script>
+
+</body>
+</html>
