@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Gift For My Bubu 🎁</title>
+
+<title>A Little Gift For You 🎁</title>
 
 <style>
 * {
@@ -19,108 +21,133 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    overflow: hidden;
+    padding: 20px;
 }
 
 .container {
-    width: 90%;
-    max-width: 620px;
-    background: rgba(255,255,255,0.9);
-    border-radius: 35px;
-    padding: 35px 25px;
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255,255,255,0.94);
+    border-radius: 30px;
+    padding: 30px 20px;
     box-shadow: 0 15px 45px rgba(150,50,80,0.18);
-    animation: appear 1s ease;
 }
 
 h1 {
     color: #d94f78;
-    font-size: clamp(34px, 8vw, 50px);
+    font-size: clamp(30px, 8vw, 45px);
+    margin-top: 0;
 }
 
 p {
     color: #604c54;
-    font-size: clamp(18px, 4.5vw, 23px);
-    line-height: 1.7;
+    font-size: 19px;
+    line-height: 1.6;
 }
 
-.gift {
-    width: 180px;
-    height: 150px;
-    margin: 35px auto 20px;
-    position: relative;
+.gift-area {
+    margin: 25px auto;
     cursor: pointer;
 }
 
-.box {
-    width: 180px;
+.gift {
+    position: relative;
+    width: 150px;
     height: 120px;
-    position: absolute;
-    bottom: 0;
     background: #df5a82;
+    margin: 70px auto 20px;
     border-radius: 8px;
-    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+    transition: transform 0.5s ease;
 }
 
-.ribbon-vertical {
+.gift:hover {
+    transform: scale(1.05);
+}
+
+.gift::before {
+    content: "";
     position: absolute;
-    left: 72px;
-    width: 36px;
+    width: 28px;
     height: 120px;
-    background: #ffd45c;
+    background: #ffd1df;
+    left: 61px;
+    top: 0;
 }
 
 .lid {
     position: absolute;
-    top: 0;
-    left: -8px;
-    width: 196px;
-    height: 45px;
+    width: 170px;
+    height: 35px;
     background: #c94770;
+    left: -10px;
+    top: -30px;
     border-radius: 8px;
-    z-index: 3;
-    transition: transform 1s ease;
-    transform-origin: left bottom;
+    transition: transform 0.8s ease;
+    z-index: 2;
 }
 
-.ribbon-top {
+.lid::before {
+    content: "";
     position: absolute;
-    left: 72px;
-    width: 36px;
-    height: 45px;
-    background: #ffd45c;
+    width: 28px;
+    height: 35px;
+    background: #ffd1df;
+    left: 71px;
 }
 
 .bow {
     position: absolute;
-    top: -35px;
-    left: 57px;
-    font-size: 55px;
-    z-index: 5;
+    width: 45px;
+    height: 30px;
+    background: #ffd1df;
+    border-radius: 50%;
+    top: -48px;
+    left: 53px;
+}
+
+.bow::after {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 30px;
+    background: #ffd1df;
+    border-radius: 50%;
+    left: 35px;
 }
 
 .gift.open .lid {
-    transform: rotate(-25deg) translateY(-55px);
+    transform: translateY(-55px) rotate(-8deg);
 }
 
-.gift.open {
-    animation: shake 0.5s ease;
+.instruction {
+    color: #d94f78;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
 }
 
 .message {
     display: none;
-    animation: reveal 1s ease;
+    background: #fff0f5;
+    padding: 20px;
+    border-radius: 22px;
+    color: #604c54;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 20px;
 }
 
 .message.show {
     display: block;
+    animation: reveal 0.8s ease;
 }
 
 .next {
     display: none;
     margin-top: 20px;
-    padding: 15px 30px;
+    padding: 14px 28px;
     border: none;
-    border-radius: 40px;
+    border-radius: 35px;
     background: #df5a82;
     color: white;
     font-size: 18px;
@@ -132,57 +159,15 @@ p {
     display: inline-block;
 }
 
-.heart {
-    position: absolute;
-    font-size: 28px;
-    animation: float 6s linear infinite;
-    opacity: 0;
-}
-
-.a { left: 10%; animation-delay: 1s; }
-.b { left: 80%; animation-delay: 2s; }
-.c { left: 45%; animation-delay: 4s; }
-
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 @keyframes reveal {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(15px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@keyframes shake {
-    0%,100% { transform: rotate(0); }
-    25% { transform: rotate(-4deg); }
-    75% { transform: rotate(4deg); }
-}
-
-@keyframes float {
-    0% {
-        bottom: -50px;
-        opacity: 0;
-    }
-    20% {
-        opacity: 1;
-    }
-    100% {
-        bottom: 110%;
-        opacity: 0;
-        transform: translateX(70px) rotate(360deg);
     }
 }
 </style>
@@ -190,96 +175,103 @@ p {
 
 <body>
 
-<div class="heart a">💗</div>
-<div class="heart b">💕</div>
-<div class="heart c">💖</div>
-
 <div class="container">
 
     <h1>A Little Gift For You 🎁</h1>
 
-    <p id="instruction">
-        Bubu, I got you something...
+    <p>
+        Chinmay baby... 🥹
         <br>
-        But you have to open it yourself. 😌
+        I have something for you.
         <br><br>
-        <b>Tap the gift! 👇</b>
+        But first...
+        <br>
+        <b>you have to open it yourself. 😌</b>
     </p>
 
-    <div class="gift" id="gift">
+    <div class="gift-area" id="giftArea">
 
-        <div class="bow">🎀</div>
+        <div class="gift" id="gift">
 
-        <div class="lid">
-            <div class="ribbon-top"></div>
+            <div class="lid">
+                <div class="bow"></div>
+            </div>
+
         </div>
 
-        <div class="box">
-            <div class="ribbon-vertical"></div>
-        </div>
+    </div>
 
+    <div class="instruction" id="instruction">
+        Tap the gift, Bubu 🎁
     </div>
 
     <div class="message" id="message">
 
-        <h1>For My Bubu 💗</h1>
+        Awww... you opened it, baby. 🥹
 
-        <p>
-            Surpriseee! 🥹
-            <br><br>
+        <br><br>
 
-            You are one of the sweetest,
-            funniest, cutest and most precious
-            people in my life.
-            <br><br>
+        You know what's inside?
 
-            And Chinmay...
-            <br>
-            I hope you never forget that
-            <b>you are loved, appreciated and wanted.</b>
-            <br><br>
+        <br><br>
 
-            Now that you've opened your first surprise...
-            <br>
-            there's still a lot waiting for you. 😌💕
-        </p>
+        <b>
+        A tiny reminder that someone loves you
+        more than you probably realise. 💗
+        </b>
 
-        <button class="next" id="next">
-            Take me to the next surprise ✨
-        </button>
+        <br><br>
+
+        And yes...
+
+        <br>
+
+        <b>
+        That someone is me, Bubu. 😌
+        </b>
 
     </div>
+
+    <button class="next" id="next">
+        Open the next surprise →
+    </button>
 
 </div>
 
 <script>
 
 const gift = document.getElementById("gift");
+const instruction = document.getElementById("instruction");
 const message = document.getElementById("message");
 const next = document.getElementById("next");
-const instruction = document.getElementById("instruction");
 
 gift.addEventListener("click", function() {
 
-    if (gift.classList.contains("open")) return;
+    if (gift.classList.contains("open")) {
+        return;
+    }
 
     gift.classList.add("open");
 
-    instruction.innerHTML =
-        "Awww... you opened it, baby. 🥹💕";
+    instruction.textContent =
+        "Awww... you opened it, baby. 🥹";
 
     setTimeout(function() {
+
         message.classList.add("show");
         next.classList.add("show");
-    }, 900);
+
+    }, 700);
 
 });
 
 next.addEventListener("click", function() {
+
     window.location.href = "page3.html";
+
 });
 
 </script>
 
 </body>
-  </html>
+</html>
