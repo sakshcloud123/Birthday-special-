@@ -1,11 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bubu Let's Play 💗</title>
+
+<title>Bubu, Let's Play 🎮</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -13,104 +16,108 @@
 body {
     margin: 0;
     min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffd1dc);
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(135deg, #ffe0eb, #fff5f8);
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    padding: 15px;
+    text-align: center;
 }
 
 .container {
-    width: 92%;
-    max-width: 500px;
-    text-align: center;
-    background: rgba(255,255,255,0.95);
-    padding: 25px 18px;
+    width: 100%;
+    max-width: 600px;
+    background: white;
     border-radius: 30px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+    padding: 25px 18px;
+    box-shadow: 0 15px 45px rgba(150,50,80,0.18);
 }
 
 h1 {
-    color: #ff3f6c;
+    color: #d94f78;
+    font-size: 38px;
 }
 
-.subtitle {
-    color: #555;
-    line-height: 1.5;
+p {
+    color: #604c54;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 .score {
+    color: #d94f78;
     font-size: 20px;
     font-weight: bold;
-    color: #ff3f6c;
     margin: 15px;
 }
 
-.game-area {
+.game {
     position: relative;
     width: 100%;
-    height: 400px;
-    background: linear-gradient(#fff0f5, #ffe1ea);
-    border: 3px solid #ff8fab;
-    border-radius: 22px;
+    height: 350px;
+    background: #fff0f5;
+    border: 3px solid #f08aaa;
+    border-radius: 25px;
     overflow: hidden;
-    touch-action: manipulation;
 }
 
-.falling-heart {
+.heart {
     position: absolute;
-    top: -50px;
-    font-size: 38px;
-    background: none;
+    top: 0;
     border: none;
-    padding: 0;
+    background: transparent;
+    font-size: 40px;
     cursor: pointer;
-    animation: fall linear forwards;
-    touch-action: manipulation;
+    padding: 5px;
+    animation: fall 2.5s linear forwards;
 }
 
 @keyframes fall {
+
     from {
         transform: translateY(-60px);
     }
 
     to {
-        transform: translateY(460px);
+        transform: translateY(380px);
     }
+
 }
 
-.catch-message {
-    min-height: 30px;
-    margin-top: 12px;
-    color: #ff3f6c;
+.message {
+    color: #d94f78;
     font-weight: bold;
-}
-
-.hidden {
-    display: none;
+    margin-top: 15px;
+    min-height: 25px;
 }
 
 .success {
-    margin-top: 15px;
-    padding: 18px;
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
     background: #fff0f5;
-    border-radius: 20px;
-    color: #ff3f6c;
+    border-radius: 22px;
+    color: #604c54;
     line-height: 1.6;
 }
 
-.next-btn {
-    margin-top: 15px;
+.success.show {
+    display: block;
+}
+
+.next {
+    margin-top: 20px;
+    padding: 15px 30px;
     border: none;
-    padding: 14px 24px;
-    border-radius: 30px;
-    background: #ff3f6c;
+    border-radius: 40px;
+    background: #df5a82;
     color: white;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 18px;
+    font-family: inherit;
     cursor: pointer;
 }
+
 </style>
 </head>
 
@@ -118,154 +125,150 @@ h1 {
 
 <div class="container">
 
-<h1>🎮 Bubu, Let's Play!</h1>
+<h1>Bubu, Let's Play! 🎮</h1>
 
-<p class="subtitle">
-Okay Chinmay baby... 😌<br>
-I have a tiny challenge for you.
+<p>
+
+Okay Chinmay baby... 😌
 
 <br><br>
 
-Catch <b>10 hearts</b> for me. 💗
+Catch <b>10 hearts</b> for me! 💗
+
+<br>
+
+Let's see how fast you are. 😂
+
 </p>
 
+
 <div class="score">
-Hearts caught: <span id="score">0</span> / 10
+
+Hearts caught:
+<span id="score">0</span> / 10
+
 </div>
 
-<div class="game-area" id="gameArea"></div>
 
-<div class="catch-message" id="catchMessage">
-Catch them, my love! 👀💗
+<div class="game" id="game"></div>
+
+
+<div class="message" id="message">
+
+Catch them, Bubu! 👀💗
+
 </div>
 
-<div id="successBox" class="success hidden">
 
-🥹 You did it, Bubu!
+<div class="success" id="success">
+
+<h2>YOU DID IT! 🥹</h2>
+
+You caught all 10 hearts!
 
 <br><br>
 
-You caught all my hearts...
+But honestly...
 
 <br>
 
-although honestly,
-<b>you already had them. 😌💗</b>
+<b>You already caught my heart a long time ago. 💗</b>
 
 <br><br>
 
-Good job, baby.
-I'm proud of you. 🥹
-
-<br><br>
-
-Now there's one more little surprise waiting for you...
+Now there's another surprise waiting for you...
 
 <br>
 
-<button class="next-btn" onclick="goNext()">
-Take me to the next one 😏
+<button class="next" onclick="goNext()">
+
+Next Surprise → 💗
+
 </button>
 
 </div>
 
 </div>
 
+
 <script>
 
 let score = 0;
 
-const gameArea = document.getElementById("gameArea");
-const scoreText = document.getElementById("score");
-const message = document.getElementById("catchMessage");
-const successBox = document.getElementById("successBox");
+let game = document.getElementById("game");
 
-const cuteMessages = [
-"That's one for your smile. 😌",
-"Good job, baby! 💗",
-"Aww Bubu caught one! 🥹",
-"That heart was definitely meant for you.",
-"My love is getting better at this. 😏",
-"One more heart for my favourite person.",
-"Chinmayyyy! You're actually good at this 😂",
-"That's my bubu! 💕",
-"Okay handsome, keep going!",
-"Almost there, baby! 👀"
-];
+let scoreText = document.getElementById("score");
+
+let message = document.getElementById("message");
+
+let success = document.getElementById("success");
+
 
 function createHeart() {
 
-if (score >= 10) return;
+    if (score >= 10) {
+        return;
+    }
 
-const heart = document.createElement("button");
+    let heart = document.createElement("button");
 
-heart.className = "falling-heart";
-heart.innerHTML = "💗";
+    heart.className = "heart";
 
-const randomLeft =
-Math.random() * (gameArea.clientWidth - 50);
+    heart.innerHTML = "💗";
 
-const randomDuration =
-2.5 + Math.random() * 2;
+    heart.style.left =
+        Math.random() * (game.clientWidth - 50) + "px";
 
-heart.style.left = randomLeft + "px";
-heart.style.animationDuration = randomDuration + "s";
 
-let caught = false;
+    heart.addEventListener("click", function() {
 
-heart.addEventListener("pointerdown", function(event) {
+        if (score >= 10) {
+            return;
+        }
 
-event.preventDefault();
+        score++;
 
-if (caught) return;
+        scoreText.textContent = score;
 
-caught = true;
+        heart.remove();
 
-score++;
+        message.textContent =
+            "Good job, Bubu! 💗";
 
-scoreText.textContent = score;
+        if (score === 10) {
 
-message.textContent =
-cuteMessages[(score - 1) % cuteMessages.length];
+            clearInterval(timer);
 
-heart.remove();
+            message.textContent =
+                "You caught all my hearts! 🥹💗";
 
-if (score >= 10) {
-finishGame();
-}
+            success.classList.add("show");
 
-});
+        }
 
-gameArea.appendChild(heart);
+    });
 
-setTimeout(() => {
 
-if (!caught && heart.parentElement) {
-heart.remove();
-}
+    game.appendChild(heart);
 
-}, randomDuration * 1000 + 300);
 
-}
+    setTimeout(function() {
 
-function finishGame() {
+        if (heart.parentElement) {
+            heart.remove();
+        }
 
-message.textContent =
-"You caught all my hearts... just like you caught mine. 🥹";
-
-successBox.classList.remove("hidden");
-
-gameArea.style.opacity = "0.45";
+    }, 3000);
 
 }
 
-let gameInterval = setInterval(createHeart, 700);
+
+let timer = setInterval(createHeart, 700);
+
 
 function goNext() {
 
-clearInterval(gameInterval);
-
-window.location.href = "page5.html";
+    window.location.href = "page5.html";
 
 }
 
