@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Little Notes For My Bubu 💌</title>
+
+<title>Little Things For My Bubu 💌</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -14,113 +16,86 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: Georgia, "Times New Roman", serif;
-    background: linear-gradient(135deg, #ffe1eb, #fff5f8);
+    background: linear-gradient(135deg, #ffe0eb, #fff5f8);
+    padding: 20px 15px;
     text-align: center;
-    color: #5d4750;
 }
 
 .container {
-    width: 92%;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 35px 15px 50px;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    border-radius: 30px;
+    padding: 30px 20px;
+    box-shadow: 0 15px 45px rgba(150,50,80,0.18);
 }
 
 h1 {
     color: #d94f78;
-    font-size: clamp(34px, 8vw, 52px);
-    margin-bottom: 8px;
+    font-size: 38px;
 }
 
-.subtitle {
-    font-size: 19px;
+.intro {
+    color: #604c54;
+    font-size: 18px;
     line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-.notes {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
 }
 
 .note {
-    min-height: 120px;
-    border: none;
-    border-radius: 22px;
-    background: #fff;
-    box-shadow: 0 8px 22px rgba(130,60,85,0.12);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 19px;
-    color: #c74770;
-    cursor: pointer;
-    padding: 18px;
-    transition: 0.3s;
-}
-
-.note:hover {
-    transform: translateY(-5px) rotate(-1deg);
-}
-
-.note.open {
     background: #fff0f5;
-    color: #694c58;
-    transform: scale(1.03);
+    border-radius: 22px;
+    padding: 20px;
+    margin: 15px 0;
+    cursor: pointer;
+    color: #d94f78;
+    font-size: 19px;
+    font-weight: bold;
 }
 
-.note span {
-    display: block;
-    font-size: 38px;
-    margin-bottom: 8px;
-}
-
-.final-message {
+.inside {
     display: none;
-    margin-top: 30px;
-    background: white;
-    border-radius: 28px;
-    padding: 25px;
-    box-shadow: 0 10px 30px rgba(130,60,85,0.15);
-    animation: reveal 0.8s ease;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f3b5c7;
+    color: #604c54;
+    font-size: 17px;
+    line-height: 1.6;
+    font-weight: normal;
 }
 
-.final-message.show {
+.note.open .inside {
     display: block;
 }
 
-.final-message p {
-    font-size: 20px;
-    line-height: 1.8;
+.note.open .tap {
+    display: none;
+}
+
+.counter {
+    margin-top: 20px;
+    color: #d94f78;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .next {
-    margin-top: 20px;
+    display: none;
+    margin-top: 25px;
     padding: 15px 30px;
     border: none;
     border-radius: 40px;
     background: #df5a82;
     color: white;
-    font-family: inherit;
     font-size: 18px;
+    font-family: inherit;
     cursor: pointer;
 }
 
-@keyframes reveal {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.next.show {
+    display: inline-block;
 }
 
-@media (max-width: 480px) {
-    .notes {
-        grid-template-columns: 1fr;
-    }
-}
 </style>
 </head>
 
@@ -128,154 +103,162 @@ h1 {
 
 <div class="container">
 
-    <h1>Little Notes For You 💌</h1>
+<h1>Little Things For You 💌</h1>
 
-    <div class="subtitle">
-        Chinmay, my baby bubu...
-        <br>
-        I couldn't fit everything I feel into one message.
-        <br><br>
-        So I left little pieces of my heart here.
-        <br>
-        <b>Tap them one by one. 🥹</b>
-    </div>
+<p class="intro">
 
-    <div class="notes">
+Chinmay baby... 🥹
 
-        <button class="note">
-            <span>💌</span>
-            Open me
-        </button>
+<br><br>
 
-        <button class="note">
-            <span>💗</span>
-            Open me
-        </button>
+Open these little notes one by one.
 
-        <button class="note">
-            <span>🥹</span>
-            Open me
-        </button>
+<br>
 
-        <button class="note">
-            <span>💕</span>
-            Open me
-        </button>
+Each one is just for my Bubu. 💗
 
-        <button class="note">
-            <span>😌</span>
-            Open me
-        </button>
+</p>
 
-        <button class="note">
-            <span>💖</span>
-            Open me
-        </button>
 
-        <button class="note">
-            <span>🫶</span>
-            Open me
-        </button>
+<div class="note">
 
-        <button class="note">
-            <span>💋</span>
-            Open me
-        </button>
+💌 Little Thing #1
 
-    </div>
+<div class="tap">
+Tap to open 👀
+</div>
 
-    <div class="final-message" id="finalMessage">
+<div class="inside">
 
-        <h2>Okayyy Bubu... 🥹💕</h2>
-
-        <p>
-            You opened all my little notes.
-            <br><br>
-
-            So here's your reminder:
-            <br><br>
-
-            You are loved. 💗
-            <br>
-            You are appreciated. 💗
-            <br>
-            You are wanted. 💗
-            <br>
-            You are enough. 💗
-            <br>
-            You make me smile. 💗
-            <br>
-            You make my heart soft. 💗
-            <br>
-            You are my favourite person to annoy. 😌
-            <br>
-            And somehow... still my favourite person to love. 🥹
-            <br><br>
-
-            <b>
-            And yes, my love...
-            I would choose you all over again. ❤️
-            </b>
-        </p>
-
-        <button class="next" id="next">
-            Okay Bubu, let's play 🎮
-        </button>
-
-    </div>
+Your smile is genuinely one of my favourite things in this world. 🥹
 
 </div>
 
+</div>
+
+
+<div class="note">
+
+💌 Little Thing #2
+
+<div class="tap">
+Tap to open 👀
+</div>
+
+<div class="inside">
+
+I love how you can make even an ordinary day feel special just by being there.
+
+</div>
+
+</div>
+
+
+<div class="note">
+
+💌 Little Thing #3
+
+<div class="tap">
+Tap to open 👀
+</div>
+
+<div class="inside">
+
+Bubu, you are my favourite person to annoy, laugh with and talk to about absolutely nothing. 😂
+
+</div>
+
+</div>
+
+
+<div class="note">
+
+💌 Little Thing #4
+
+<div class="tap">
+Tap to open 👀
+</div>
+
+<div class="inside">
+
+And finally...
+
+<br><br>
+
+Chinmay, I hope you always remember how incredibly special you are to me.
+
+<br><br>
+
+I love you, Bubu. 🥹💗
+
+</div>
+
+</div>
+
+
+<div class="counter" id="counter">
+
+Opened: 0 / 4
+
+</div>
+
+
+<button class="next" id="next" onclick="goNext()">
+
+Next Surprise → 💗
+
+</button>
+
+</div>
+
+
 <script>
-
-const notes = document.querySelectorAll(".note");
-const finalMessage = document.getElementById("finalMessage");
-const next = document.getElementById("next");
-
-const messages = [
-    "Chinmay, you are my favourite person to talk to, even when I have absolutely nothing important to say. 🥹",
-    
-    "Baby, you have this ridiculous ability to make me smile without even trying. 💗",
-    
-    "Bubu, you are handsome, adorable, annoying and lovable... sometimes all at the exact same time. 😌",
-    
-    "My love, you deserve to know that you are appreciated more than you probably realise. 💕",
-    
-    "Chinmay, if I had to choose my favourite notification, it would still be your name popping up on my phone. 📱💗",
-    
-    "Baby, I hope you always remember that someone out here thinks you're incredibly special. 🥹",
-    
-    "Bubu, you are my comfort person, my favourite nuisance and one of my happiest thoughts. 🫶",
-    
-    "And my love... if I could give you one thing, it would be the ability to see yourself through my eyes. Then you'd know just how special you are. 💋"
-];
 
 let opened = 0;
 
-notes.forEach(function(note, index) {
+const notes = document.querySelectorAll(".note");
+
+const counter = document.getElementById("counter");
+
+const next = document.getElementById("next");
+
+
+notes.forEach(function(note) {
 
     note.addEventListener("click", function() {
 
-        if (note.classList.contains("open")) return;
+        if (note.classList.contains("open")) {
+            return;
+        }
 
         note.classList.add("open");
-        note.innerHTML = messages[index];
 
         opened++;
 
-        if (opened === notes.length) {
-            setTimeout(function() {
-                finalMessage.classList.add("show");
-                finalMessage.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center"
-                });
-            }, 500);
+        counter.textContent =
+            "Opened: " + opened + " / 4";
+
+        if (opened === 4) {
+
+            counter.textContent =
+                "You opened all 4 little secrets! 🥹💗";
+
+            next.classList.add("show");
+
         }
 
     });
 
 });
 
-next.addEventListener("click", function() {
-    window.location.href = "
+
+function goNext() {
+
+    window.location.href = "page4.html";
+
+}
+
+</script>
+
+</body>
+</html>
