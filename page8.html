@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday My Love 🎂</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(135deg, #ffb6c9, #ffe5ed, #fff7fa);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 650px;
+    background: rgba(255,255,255,0.94);
+    border-radius: 35px;
+    padding: 35px 25px;
+    box-shadow: 0 15px 50px rgba(150,50,80,0.2);
+    animation: appear 1.2s ease;
+    position: relative;
+    z-index: 5;
+}
+
+h1 {
+    color: #d94f78;
+    font-size: clamp(35px, 9vw, 58px);
+    margin-bottom: 10px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.subtitle {
+    color: #604c54;
+    font-size: clamp(20px, 5vw, 27px);
+    line-height: 1.6;
+}
+
+.message {
+    margin-top: 25px;
+    padding: 25px 20px;
+    background: linear-gradient(135deg, #fff0f5, #ffe1ea);
+    border-radius: 28px;
+    color: #604c54;
+    font-size: clamp(17px, 4.5vw, 21px);
+    line-height: 1.8;
+    text-align: center;
+}
+
+.message b {
+    color: #d94f78;
+}
+
+.cake {
+    font-size: 75px;
+    margin: 15px 0;
+    animation: bounce 1.5s infinite;
+}
+
+.love {
+    margin-top: 20px;
+    color: #d94f78;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.restart {
+    margin-top: 20px;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 40px;
+    background: #df5a82;
+    color: white;
+    font-size: 17px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.heart {
+    position: fixed;
+    bottom: -50px;
+    font-size: 28px;
+    pointer-events: none;
+    animation: float 6s linear infinite;
+    opacity: 0;
+    z-index: 1;
+}
+
+.h1 { left: 5%; animation-delay: 0s; }
+.h2 { left: 20%; animation-delay: 1s; }
+.h3 { left: 40%; animation-delay: 2s; }
+.h4 { left: 60%; animation-delay: 3s; }
+.h5 { left: 80%; animation-delay: 4s; }
+.h6 { left: 92%; animation-delay: 5s; }
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -20px;
+    animation: confettiFall 4s linear forwards;
+    z-index: 10;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+@keyframes bounce {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes float {
+
+    0% {
+        bottom: -50px;
+        opacity: 0;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: translateX(70px) rotate(360deg);
+    }
+}
+
+@keyframes confettiFall {
+
+    0% {
+        top: -20px;
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        top: 110vh;
+        transform: rotate(720deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="heart h1">💗</div>
+<div class="heart h2">💕</div>
+<div class="heart h3">💖</div>
+<div class="heart h4">💗</div>
+<div class="heart h5">💕</div>
+<div class="heart h6">💖</div>
+
+<div class="container">
+
+    <div class="cake">
+        🎂
+    </div>
+
+    <h1>
+        Happy Birthday,
+        <br>
+        My Love! 🎉
+    </h1>
+
+    <p class="subtitle">
+
+        Chinmay baby...
+        <br>
+
+        <b>Happy Birthday to my Bubu! 🥹</b>
+
+    </p>
+
+    <div class="message">
+
+        Today is all about you.
+
+        <br><br>
+
+        I hope this year brings you
+        happiness, peace, success,
+        beautiful memories and
+        everything your heart wishes for.
+
+        <br><br>
+
+        But most importantly...
+
+        <br><br>
+
+        <b>
+        I hope you always remember
+        how incredibly special you are to me.
+        </b>
+
+        <br><br>
+
+        Chinmay, my baby,
+        my Bubu,
+        my love...
+
+        <br><br>
+
+        Thank you for being you.
+
+        <br><br>
+
+        Thank you for making me smile.
+        <br>
+        Thank you for being someone
+        I can call mine.
+        <br>
+        Thank you for all the little moments
+        that became my favourite memories.
+
+        <br><br>
+
+        You are loved.
+        <br>
+        You are appreciated.
+        <br>
+        You are wanted.
+        <br>
+        You are enough.
+        <br>
+        And you are so,
+        <b>so special to me.</b>
+
+        <br><br>
+
+        If I could make one birthday wish
+        for myself...
+
+        <br><br>
+
+        <b>
+        I would wish for many more
+        birthdays with you. 🥹
+        </b>
+
+    </div>
+
+    <div class="love">
+
+        I love you, Bubu. 💗
+        <br>
+        Happy Birthday, Chinmay. 🎂
+
+    </div>
+
+    <button class="restart" onclick="restart()">
+        Read it all again 🥹
+    </button>
+
+</div>
+
+<script>
+
+function createConfetti() {
+
+    const confetti = document.createElement("div");
+
+    confetti.className = "confetti";
+
+    const symbols = [
+        "💗",
+        "💕",
+        "💖",
+        "✨",
+        "🎉"
+    ];
+
+    confetti.innerHTML =
+        symbols[Math.floor(Math.random() * symbols.length)];
+
+    confetti.style.left =
+        Math.random() * 100 + "vw";
+
+    confetti.style.fontSize =
+        (15 + Math.random() * 15) + "px";
+
+    confetti.style.animationDuration =
+        (3 + Math.random() * 3) + "s";
+
+    document.body.appendChild(confetti);
+
+    setTimeout(function() {
+        confetti.remove();
+    }, 6000);
+
+}
+
+setInterval(createConfetti, 180);
+
+function restart() {
+
+    window.location.href = "index.html";
+
+}
+
+</script>
+
+</body>
+</html>
