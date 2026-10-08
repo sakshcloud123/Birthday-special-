@@ -1,141 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday My Love 🎂</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Bubu 🌸</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
 
+html,
 body {
     margin: 0;
-    min-height: 100vh;
-    font-family: Georgia, "Times New Roman", serif;
-    background: linear-gradient(135deg, #ffb6c9, #ffe5ed, #fff7fa);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+
     overflow: hidden;
-}
 
-.container {
-    width: 90%;
-    max-width: 650px;
-    background: rgba(255,255,255,0.94);
-    border-radius: 35px;
-    padding: 35px 25px;
-    box-shadow: 0 15px 50px rgba(150,50,80,0.2);
-    animation: appear 1.2s ease;
-    position: relative;
-    z-index: 5;
-}
+    display: flex;
 
-h1 {
-    color: #d94f78;
-    font-size: clamp(35px, 9vw, 58px);
-    margin-bottom: 10px;
-    animation: heartbeat 1.5s infinite;
-}
+    justify-content: center;
 
-.subtitle {
-    color: #604c54;
-    font-size: clamp(20px, 5vw, 27px);
-    line-height: 1.6;
-}
+    align-items: center;
 
-.message {
-    margin-top: 25px;
-    padding: 25px 20px;
-    background: linear-gradient(135deg, #fff0f5, #ffe1ea);
-    border-radius: 28px;
-    color: #604c54;
-    font-size: clamp(17px, 4.5vw, 21px);
-    line-height: 1.8;
     text-align: center;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd1df,
+            #fff0f5,
+            #ffdce8
+        );
+
 }
 
-.message b {
-    color: #d94f78;
+
+/* MAIN CARD */
+
+.card {
+
+    width: 90%;
+
+    max-width: 520px;
+
+    padding: 18px 18px 15px;
+
+    background:
+        rgba(255,255,255,0.95);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 45px
+        rgba(150,50,80,0.22);
+
+    position: relative;
+
+    z-index: 10;
+
+    animation: appear 1s ease;
+
 }
+
+
+/* FLOWER TOP */
+
+.top {
+
+    font-size: 24px;
+
+    margin-bottom: 2px;
+
+}
+
+
+/* CAKE */
 
 .cake {
-    font-size: 75px;
-    margin: 15px 0;
-    animation: bounce 1.5s infinite;
+
+    font-size: 48px;
+
+    margin: 2px 0;
+
+    animation: bounce 2s infinite;
+
 }
 
-.love {
-    margin-top: 20px;
+
+/* TITLE */
+
+h1 {
+
+    margin: 2px 0;
+
     color: #d94f78;
-    font-size: 24px;
-    font-weight: bold;
+
+    font-size:
+        clamp(30px, 8vw, 45px);
+
+    line-height: 1.05;
+
+    animation: heartbeat 2s infinite;
+
 }
 
-.restart {
-    margin-top: 20px;
-    padding: 14px 25px;
-    border: none;
-    border-radius: 40px;
-    background: #df5a82;
-    color: white;
+
+/* SUBTITLE */
+
+.subtitle {
+
+    margin: 5px 0 8px;
+
+    color: #604c54;
+
     font-size: 17px;
-    font-family: inherit;
-    cursor: pointer;
+
+    line-height: 1.3;
+
 }
+
+
+/* MESSAGE */
+
+.message {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f5,
+            #ffe3ec
+        );
+
+    border-radius: 20px;
+
+    padding: 11px 12px;
+
+    color: #604c54;
+
+    font-size:
+        clamp(13px, 3.5vw, 16px);
+
+    line-height: 1.35;
+
+}
+
+
+/* SPECIAL MESSAGE */
+
+.special {
+
+    color: #d94f78;
+
+    font-size:
+        clamp(16px, 4vw, 20px);
+
+    font-weight: bold;
+
+    line-height: 1.3;
+
+    margin-top: 9px;
+
+}
+
+
+/* FINAL TEXT */
+
+.final {
+
+    color: #604c54;
+
+    font-size:
+        clamp(13px, 3.5vw, 16px);
+
+    line-height: 1.35;
+
+    margin-top: 8px;
+
+}
+
+
+.final b {
+
+    color: #d94f78;
+
+}
+
+
+/* BUTTON */
+
+button {
+
+    margin-top: 10px;
+
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #df5a82;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+}
+
+
+/* FLOATING FLOWERS */
+
+.flower {
+
+    position: fixed;
+
+    bottom: -30px;
+
+    font-size: 24px;
+
+    pointer-events: none;
+
+    animation:
+        rise 7s linear infinite;
+
+    z-index: 2;
+
+}
+
+
+/* HEARTS */
 
 .heart {
+
     position: fixed;
-    bottom: -50px;
-    font-size: 28px;
+
+    bottom: -30px;
+
+    font-size: 22px;
+
     pointer-events: none;
-    animation: float 6s linear infinite;
-    opacity: 0;
-    z-index: 1;
+
+    animation:
+        riseHeart 6s linear infinite;
+
+    z-index: 3;
+
 }
 
-.h1 { left: 5%; animation-delay: 0s; }
-.h2 { left: 20%; animation-delay: 1s; }
-.h3 { left: 40%; animation-delay: 2s; }
-.h4 { left: 60%; animation-delay: 3s; }
-.h5 { left: 80%; animation-delay: 4s; }
-.h6 { left: 92%; animation-delay: 5s; }
 
-.confetti {
+/* SPARKLES */
+
+.sparkle {
+
     position: fixed;
-    width: 10px;
-    height: 10px;
-    top: -20px;
-    animation: confettiFall 4s linear forwards;
-    z-index: 10;
+
+    font-size: 20px;
+
+    animation:
+        sparkle 2s infinite;
+
+    z-index: 4;
+
 }
+
+
+/* POSITIONS */
+
+.f1 {
+    left: 5%;
+}
+
+.f2 {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.f3 {
+    left: 50%;
+    animation-delay: 4s;
+}
+
+.f4 {
+    left: 75%;
+    animation-delay: 1s;
+}
+
+.f5 {
+    left: 92%;
+    animation-delay: 3s;
+}
+
+.h1 {
+    left: 15%;
+    animation-delay: 1s;
+}
+
+.h2 {
+    left: 40%;
+    animation-delay: 3s;
+}
+
+.h3 {
+    left: 65%;
+    animation-delay: 2s;
+}
+
+.h4 {
+    left: 85%;
+    animation-delay: 4s;
+}
+
+
+/* ANIMATIONS */
 
 @keyframes appear {
+
     from {
         opacity: 0;
-        transform: scale(0.7);
+        transform: scale(0.8);
     }
 
     to {
         opacity: 1;
         transform: scale(1);
     }
+
 }
 
-@keyframes heartbeat {
-
-    0%,100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.06);
-    }
-}
 
 @keyframes bounce {
 
@@ -144,16 +352,31 @@ h1 {
     }
 
     50% {
-        transform: translateY(-12px);
+        transform: translateY(-6px);
     }
+
 }
 
-@keyframes float {
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+}
+
+
+@keyframes rise {
 
     0% {
-        bottom: -50px;
+        bottom: -30px;
         opacity: 0;
-        transform: translateX(0) rotate(0deg);
+        transform: rotate(0deg);
     }
 
     20% {
@@ -163,185 +386,272 @@ h1 {
     100% {
         bottom: 110%;
         opacity: 0;
-        transform: translateX(70px) rotate(360deg);
+        transform:
+            translateX(50px)
+            rotate(360deg);
     }
+
 }
 
-@keyframes confettiFall {
+
+@keyframes riseHeart {
 
     0% {
-        top: -20px;
-        transform: rotate(0deg);
+        bottom: -30px;
+        opacity: 0;
+    }
+
+    20% {
         opacity: 1;
     }
 
     100% {
-        top: 110vh;
-        transform: rotate(720deg);
+        bottom: 110%;
         opacity: 0;
+        transform:
+            translateX(40px)
+            rotate(360deg);
     }
+
 }
+
+
+@keyframes sparkle {
+
+    0%,100% {
+        opacity: 0.3;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+}
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- FLOWERS -->
+
+<div class="flower f1">🌸</div>
+<div class="flower f2">🌷</div>
+<div class="flower f3">🌺</div>
+<div class="flower f4">🌸</div>
+<div class="flower f5">🌼</div>
+
+
+<!-- HEARTS -->
 
 <div class="heart h1">💗</div>
 <div class="heart h2">💕</div>
 <div class="heart h3">💖</div>
 <div class="heart h4">💗</div>
-<div class="heart h5">💕</div>
-<div class="heart h6">💖</div>
 
-<div class="container">
 
-    <div class="cake">
-        🎂
-    </div>
+<!-- SPARKLES -->
 
-    <h1>
-        Happy Birthday,
-        <br>
-        My Love! 🎉
-    </h1>
+<div class="sparkle"
+style="top:8%;left:10%;">
+✨
+</div>
 
-    <p class="subtitle">
+<div class="sparkle"
+style="top:12%;right:10%;">
+✨
+</div>
 
-        Chinmay baby...
-        <br>
+<div class="sparkle"
+style="bottom:10%;left:8%;">
+⭐
+</div>
 
-        <b>Happy Birthday to my Bubu! 🥹</b>
+<div class="sparkle"
+style="bottom:12%;right:8%;">
+✨
+</div>
 
-    </p>
 
-    <div class="message">
+<!-- FINAL CARD -->
 
-        Today is all about you.
+<div class="card">
 
-        <br><br>
 
-        I hope this year brings you
-        happiness, peace, success,
-        beautiful memories and
-        everything your heart wishes for.
+<div class="top">
+🌸 ✨ 🌸
+</div>
 
-        <br><br>
 
-        But most importantly...
+<div class="cake">
+🎂
+</div>
 
-        <br><br>
 
-        <b>
-        I hope you always remember
-        how incredibly special you are to me.
-        </b>
+<h1>
 
-        <br><br>
+Happy Birthday,
 
-        Chinmay, my baby,
-        my Bubu,
-        my love...
+<br>
 
-        <br><br>
+My Bubu! 💗
 
-        Thank you for being you.
+</h1>
 
-        <br><br>
 
-        Thank you for making me smile.
-        <br>
-        Thank you for being someone
-        I can call mine.
-        <br>
-        Thank you for all the little moments
-        that became my favourite memories.
+<div class="subtitle">
 
-        <br><br>
+Chinmay baby... 🥹
 
-        You are loved.
-        <br>
-        You are appreciated.
-        <br>
-        You are wanted.
-        <br>
-        You are enough.
-        <br>
-        And you are so,
-        <b>so special to me.</b>
+<br>
 
-        <br><br>
-
-        If I could make one birthday wish
-        for myself...
-
-        <br><br>
-
-        <b>
-        I would wish for many more
-        birthdays with you. 🥹
-        </b>
-
-    </div>
-
-    <div class="love">
-
-        I love you, Bubu. 💗
-        <br>
-        Happy Birthday, Chinmay. 🎂
-
-    </div>
-
-    <button class="restart" onclick="restart()">
-        Read it all again 🥹
-    </button>
+<b>Happy Birthday, my love!</b>
 
 </div>
 
+
+<div class="message">
+
+Today I just want you to know
+how incredibly special you are to me.
+
+<br>
+
+I hope this year gives you
+happiness, success, peace
+and countless beautiful memories.
+
+<br>
+
+<b>
+And I hope I get to be part
+of many of those memories.
+</b>
+
+</div>
+
+
+<div class="special">
+
+You are not just my favourite person...
+
+<br>
+
+You are my favourite part
+of my life. 🥹💗
+
+</div>
+
+
+<div class="final">
+
+Thank you for every smile,
+every laugh, every little moment
+and every memory.
+
+<br>
+
+<b>
+Thank you for being my Bubu.
+</b>
+
+<br><br>
+
+No matter how many birthdays
+come after this...
+
+<br>
+
+<b>
+I want to celebrate
+many more with you. 🌸
+</b>
+
+</div>
+
+
+<div class="special">
+
+I love you, Chinmay. 💗
+
+<br>
+
+Happy Birthday, my love. 🎂🌸
+
+</div>
+
+
+<button onclick="restart()">
+
+Start our little story again
+
+</button>
+
+
+</div>
+
+
 <script>
-
-function createConfetti() {
-
-    const confetti = document.createElement("div");
-
-    confetti.className = "confetti";
-
-    const symbols = [
-        "💗",
-        "💕",
-        "💖",
-        "✨",
-        "🎉"
-    ];
-
-    confetti.innerHTML =
-        symbols[Math.floor(Math.random() * symbols.length)];
-
-    confetti.style.left =
-        Math.random() * 100 + "vw";
-
-    confetti.style.fontSize =
-        (15 + Math.random() * 15) + "px";
-
-    confetti.style.animationDuration =
-        (3 + Math.random() * 3) + "s";
-
-    document.body.appendChild(confetti);
-
-    setTimeout(function() {
-        confetti.remove();
-    }, 6000);
-
-}
-
-setInterval(createConfetti, 180);
 
 function restart() {
 
-    window.location.href = "index.html";
+    window.location.href =
+        "index.html";
 
 }
 
+
+/* CONTINUOUS FLOWERS */
+
+function createFlower() {
+
+    const flower =
+        document.createElement("div");
+
+    flower.className =
+        "flower";
+
+    const flowers = [
+        "🌸",
+        "🌷",
+        "🌺",
+        "🌼"
+    ];
+
+    flower.textContent =
+        flowers[
+            Math.floor(
+                Math.random() *
+                flowers.length
+            )
+        ];
+
+    flower.style.left =
+        Math.random() * 100 + "vw";
+
+    flower.style.animationDuration =
+        (6 + Math.random() * 3) + "s";
+
+    document.body.appendChild(flower);
+
+    setTimeout(function() {
+
+        flower.remove();
+
+    }, 9000);
+
+}
+
+setInterval(createFlower, 1000);
+
 </script>
 
+
 </body>
+
 </html>
